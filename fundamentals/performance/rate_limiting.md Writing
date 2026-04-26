@@ -1,0 +1,50 @@
+# Rate Limiting
+
+## What problem does it solve?
+
+It prevents system overload by restricting how many requests a user can make in a given time. Basically stops spamming and keeps the system stable.
+
+---
+
+## Common Algorithms
+
+### 1. Token Bucket
+- Tokens are added at a fixed rate  
+- Each request consumes a token  
+- If token available → allow request  
+- If not → reject  
+
+### 2. Leaky Bucket
+- Requests are processed at a constant rate  
+- Extra requests are simply dropped  
+- Smooths traffic but can lose bursts  
+
+### 3. Fixed Window
+- Set a limit per time window (like 100 req/min)  
+- Simple to implement  
+- Problem: burst at window edges  
+
+---
+
+## Use Cases
+
+- Prevent API abuse  
+- Protect backend services from overload  
+
+Used in real systems like:
+- Twitter  
+- Instagram  
+
+---
+
+## Trade-offs
+
+- Too strict → bad user experience  
+- Too loose → system can still get overloaded  
+- Hard to implement properly in distributed systems  
+
+---
+
+## Summary
+
+Rate limiting is essential for system stability. It controls traffic, prevents abuse, and ensures fair usage across users.
