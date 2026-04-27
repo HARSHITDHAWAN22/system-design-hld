@@ -5,7 +5,7 @@
 ## Requirements
 
 **Functional**
-- One-to-one and group chat
+- One-to-one and group chat 
 - Message delivery status (sent, delivered, read)
 - Offline message delivery
 
