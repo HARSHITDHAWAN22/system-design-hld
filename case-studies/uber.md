@@ -84,3 +84,32 @@ Rider requests ride
 ---
 
 **Core challenge — real-time matching and tracking at scale. Geo-indexing + WebSockets + caching is the backbone.**
+
+
+## Real-Time Location Tracking
+
+Drivers send location updates every few seconds → stored in cache (not DB).
+
+- In-memory storage for fast lookup
+- DB write would be too slow at this frequency
+
+```
+Driver app → Location update → Cache (every 3-5s)
+```
+
+---
+
+## Driver-Rider Matching
+
+Uses geospatial indexing (GeoHash) to find nearby drivers fast.
+
+```
+Rider requests ride
+→ System finds nearby drivers via GeoHash
+→ Sends request to closest drivers
+→ First driver to accept = matched
+→ Ride starts
+```
+
+**Why GeoHash?**
+Converts location into a string. Nearby locations share same prefix. Fast range queries without scanning entire DB.
