@@ -113,3 +113,14 @@ Rider requests ride
 
 **Why GeoHash?**
 Converts location into a string. Nearby locations share same prefix. Fast range queries without scanning entire DB.
+
+
+📌 6. Scaling Strategy
+
+* Geo-sharding based on location
+* Cache active drivers
+* Horizontal scaling of services
+* Use message queues for async tasks
+📌 7. Bottlenecks
+1. High location updates
+→ Use in-memory cache
