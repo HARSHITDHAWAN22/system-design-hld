@@ -124,3 +124,25 @@ Converts location into a string. Nearby locations share same prefix. Fast range 
 📌 7. Bottlenecks
 1. High location updates
 → Use in-memory cache
+
+
+## Trade-offs
+
+| Decision | Benefit | Drawback |
+|---|---|---|
+| Real-time updates | Accurate tracking | High network usage |
+| Caching | Fast response | Stale data risk |
+| Geo-indexing | Fast lookup | Complex implementation |
+
+---
+
+## Advanced Features
+
+- Surge pricing — dynamic pricing based on demand
+- Ride pooling — match multiple riders on same route
+- Route optimization — shortest path calculation
+- Driver ranking — rating-based matching priority
+
+---
+
+**Uber at scale = real-time tracking + geo-indexing + caching + async processing. Matching speed and location accuracy are everything.**
